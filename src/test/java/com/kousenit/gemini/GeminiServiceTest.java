@@ -85,7 +85,7 @@ class GeminiServiceTest {
                 GeminiService.GEMINI_ULTIMATE,
                 new JsonStructure.GeminiRequest(
                         List.of(new JsonStructure.Content(List.of(new JsonStructure.TextPart(question))))));
-        String text = response.candidates().getFirst().content().parts().getFirst().text();
+        String text = response.candidates().get(0).content().parts().get(0).text();
         assertNotNull(text);
         System.out.println(text);
     }

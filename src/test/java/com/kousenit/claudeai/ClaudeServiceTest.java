@@ -46,7 +46,7 @@ class ClaudeServiceTest {
         var response = claudeService.getClaudeMessageResponse(question, ClaudeService.CLAUDE_3_OPUS);
         System.out.println(response);
         assertThat(response.content()
-                .getFirst()
+                .get(0)
                 .text()).contains("Ahoy");
     }
 
@@ -84,7 +84,7 @@ class ClaudeServiceTest {
         var response = claudeService.getClaudeMessageResponse(question, ClaudeService.CLAUDE_3_HAIKU);
         System.out.println(response);
         assertThat(response.content()
-                .getFirst()
+                .get(0)
                 .text()).contains("3.16");
     }
 
@@ -98,7 +98,7 @@ class ClaudeServiceTest {
         System.out.println(response.model());
         System.out.println(response.usage());
         String poem = response.content()
-                .getFirst()
+                .get(0)
                 .text();
         System.out.println(poem);
         assertThat(poem).isNotBlank();
@@ -114,7 +114,7 @@ class ClaudeServiceTest {
         var response = claudeService.getClaudeMessageResponse(question, ClaudeService.CLAUDE_3_SONNET);
         System.out.println(response);
         assertThat(response.content()
-                .getFirst()
+                .get(0)
                 .text()).contains("3.16");
     }
 
@@ -128,7 +128,7 @@ class ClaudeServiceTest {
         var response = claudeService.getClaudeMessageResponse(question, ClaudeService.CLAUDE_3_OPUS);
         System.out.println(response);
         assertThat(response.content()
-                .getFirst()
+                .get(0)
                 .text()).contains("3.16");
     }
 
